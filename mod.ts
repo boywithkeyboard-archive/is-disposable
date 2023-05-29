@@ -2,7 +2,10 @@ import blocklist from './blocklist.json' assert { type: 'json' }
 
 let remoteBlocklist: { cached_at: number; domains: string[] } | undefined
 
-export default async function isDisposable(email: string, { remote = false } = {}) {
+export default async function isDisposable(
+  email: string,
+  { remote = false } = {},
+) {
   if (/^[\w\-\.]+@([\w-]+\.)+[\w-]{2,4}$/.test(email) === false) {
     throw new Error('invalid email')
   }
