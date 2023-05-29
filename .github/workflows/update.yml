@@ -1,0 +1,58 @@
+name: 'update'
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 0 * * 0' # midnight, sunday
+
+permissions: write-all
+
+jobs:
+  update:
+    runs-on: 'ubuntu-latest'
+
+    steps:
+      - uses: 'actions/checkout@v3'
+
+      - uses: 'actions/setup-node@v3'
+        with:
+          node-version: 18
+
+      - uses: 'denoland/setup-deno@v1'
+        with:
+          deno-version: 'v1.x'
+
+      - name: 'build package'
+        run: deno task build
+
+      - name: 'bump version'
+        run: 'npm version minor'
+
+      - uses: 'JS-DevTools/npm-publish@v2'
+        with:
+          token: ${{ secrets.NPM_TOKEN }}
+
+      - name: 'commit changes'
+        run: |
+          git config --global user.name 'GitHub'
+          git config --global user.email 'noreply@github.com'
+          git commit -am "update (automated)"
+          git push
+
+      - name: 'publish update'
+        uses: 'actions/github-script@v6'
+        with:
+          script: |
+            const { readFile } = require('fs/promises')
+              
+            const { version } = JSON.parse(await readFile('./package.json', { encoding: 'utf-8' }))
+
+            github.rest.repos.createRelease({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              tag_name: version,
+              name: version,
+              body: '',
+              draft: false,
+              prerelease: false
+            })

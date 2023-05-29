@@ -1,0 +1,17 @@
+{
+  "fmt": {
+    "semiColons": false,
+    "singleQuote": true,
+    "exclude": [
+      "index.cjs",
+      "index.mjs",
+      "blocklist.json"
+    ]
+  },
+  "tasks": {
+    "build:esm": "deno run -A https://deno.land/x/esbuild@v0.17.19/mod.js mod.ts --bundle --minify --allow-overwrite --format=esm --outfile=index.mjs",
+    "build:cjs": "deno run -A https://deno.land/x/esbuild@v0.17.19/mod.js mod.ts --bundle --minify --allow-overwrite --format=cjs --outfile=index.cjs",
+    "build": "deno run -A .github/preBuild.ts && deno task build:esm && deno task build:cjs && deno fmt && deno run -A .github/postBuild.ts",
+    "publish": "deno task build && npm publish --access=public"
+  }
+}

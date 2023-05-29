@@ -1,0 +1,31 @@
+{
+  "name": "is-disposable",
+  "version": "0.0.0",
+  "author": "Samuel Kopp (https://samuelkopp.de)",
+  "license": "MIT",
+  "description": "A JavaScript library for disposable-email-domains.",
+  "main": "index.cjs",
+  "module": "index.mjs",
+  "types": "index.d.ts",
+  "files": [
+    "index.mjs",
+    "index.cjs",
+    "index.d.ts",
+    ".npmrc"
+  ],
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./index.d.ts",
+        "default": "./index.mjs"
+      },
+      "require": {
+        "types": "./index.d.ts",
+        "default": "./index.cjs"
+      }
+    }
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
