@@ -30,6 +30,6 @@ const isDisposable = require('is-disposable')
 // Offline Mode
 console.log(await isDisposable('example@email.com')) // updated weekly
 
-// Online Mode
+// Online Mode (RECOMMENDED)
 console.log(await isDisposable('example@email.com', { remote: true })) // updated hourly
 ```
