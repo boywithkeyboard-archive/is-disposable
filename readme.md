@@ -1,6 +1,8 @@
 ## is-disposable
 
-This library uses [disposable-email-domains](https://github.com/disposable-email-domains/disposable-email-domains) under the hood to check whether a email address is disposable.
+This library uses
+[disposable-email-domains](https://github.com/disposable-email-domains/disposable-email-domains)
+under the hood to check whether a email address is disposable.
 
 ### Setup
 
