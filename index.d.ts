@@ -1,1 +1,1 @@
-export declare function isDisposable(email:string,{remote}:{remote?:boolean},):Promise<boolean>
+export declare function isDisposable(email:string,{remote}?:{remote?:boolean|undefined;}):Promise<boolean>
