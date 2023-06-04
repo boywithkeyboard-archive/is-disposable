@@ -1,11 +1,11 @@
 {
   "name": "is-disposable",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "author": "Samuel Kopp (https://samuelkopp.de)",
   "license": "MIT",
   "description": "A JavaScript library to check whether a email address is disposable.",
   "repository": "boywithkeyboard/is-disposable",
-	"funding": "https://github.com/sponsors/boywithkeyboard",
+  "funding": "https://github.com/sponsors/boywithkeyboard",
   "main": "index.cjs",
   "module": "index.mjs",
   "types": "index.d.ts",
