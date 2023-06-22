@@ -35,3 +35,10 @@ console.log(await isDisposable('example@email.com')) // updated weekly
 // Online Mode (RECOMMENDED)
 console.log(await isDisposable('example@email.com', { remote: true })) // updated hourly
 ```
+
+---
+
+**PROTIP:** If you need a more accurate solution, I recommend to check out my upcoming cloud service
+[devyl](https://devyl.net).
+
+---
