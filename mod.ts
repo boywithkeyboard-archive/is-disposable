@@ -6,7 +6,9 @@ export default async function isDisposable(
   email: string,
   { remote = false } = {},
 ) {
-  if (/^[\w\-\.]+@([\w-]+\.)+[\w-]{2,4}$/.test(email) === false) {
+  const regex = /^([A-Z0-9_+-]+\.?)*[A-Z0-9_+-]@([A-Z0-9][A-Z0-9\-]*\.)+[A-Z]{2,}$/i
+  
+  if (regex.test(email) === false) {
     throw new Error('invalid email')
   }
 
