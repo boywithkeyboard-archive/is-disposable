@@ -4,6 +4,13 @@ This library uses
 [disposable-email-domains](https://github.com/disposable-email-domains/disposable-email-domains)
 under the hood to check whether a email address is disposable.
 
+---
+
+**PROTIP:** If you need a more accurate solution, I recommend to check out my upcoming cloud service
+[devyl](https://devyl.net).
+
+---
+
 ### Setup
 
 #### Deno
@@ -35,10 +42,3 @@ console.log(await isDisposable('example@email.com')) // updated weekly
 // Online Mode (RECOMMENDED)
 console.log(await isDisposable('example@email.com', { remote: true })) // updated hourly
 ```
-
----
-
-**PROTIP:** If you need a more accurate solution, I recommend to check out my upcoming cloud service
-[devyl](https://devyl.net).
-
----
