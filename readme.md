@@ -6,8 +6,8 @@ under the hood to check whether a email address is disposable.
 
 ---
 
-**PROTIP:** If you need a more accurate solution, I recommend to check out my upcoming cloud service
-[devyl](https://devyl.net).
+**PROTIP:** If you need a more accurate solution, I recommend to check out my
+upcoming cloud service [devyl](https://devyl.net).
 
 ---
 
